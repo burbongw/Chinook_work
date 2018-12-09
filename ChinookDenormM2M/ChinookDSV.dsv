@@ -279,12 +279,13 @@
             <xs:element name="dbo_InvoiceLine" msprop:design-time-name="d6e7d7dd-46d0-4d7d-a2a1-2a7f50111a55" msprop:FriendlyName="InvoiceLine" msprop:DbSchemaName="dbo" msprop:DbTableName="vw_InvoiceLine" msprop:TableType="View">
               <xs:complexType>
                 <xs:sequence>
-                  <xs:element name="InvoiceLineId" msprop:design-time-name="ac49851e-1396-4af2-9c88-82f272f84c6f" msprop:DbColumnName="InvoiceLineId" msprop:FriendlyName="InvoiceLineId" type="xs:int" />
-                  <xs:element name="InvoiceId" msprop:design-time-name="d2ecb463-292f-42d5-b32b-1173bdeaecdb" msprop:DbColumnName="InvoiceId" msprop:FriendlyName="InvoiceId" type="xs:int" />
-                  <xs:element name="TrackId" msprop:design-time-name="a51ebf91-1642-49b6-a3df-14db84e0aedb" msprop:DbColumnName="TrackId" msprop:FriendlyName="TrackId" type="xs:int" />
-                  <xs:element name="UnitPrice" msprop:design-time-name="d3546a15-8bf6-4a38-ab9c-17fa8d0a3d71" msprop:DbColumnName="UnitPrice" msprop:FriendlyName="UnitPrice" type="xs:decimal" />
-                  <xs:element name="Quantity" msprop:design-time-name="8543d759-faa3-41d8-bae3-249afee67d6f" msprop:DbColumnName="Quantity" msprop:FriendlyName="Quantity" type="xs:int" />
-                  <xs:element name="TotalLineAmount" msprop:DbColumnName="TotalLineAmount" msprop:design-time-name="86a2b6cb-20af-4671-97fe-3bceaf579c27" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="InvoiceLineId" msprop:design-time-name="ac49851e-1396-4af2-9c88-82f272f84c6f" msprop:DbColumnName="InvoiceLineId" msprop:FriendlyName="InvoiceLineId" type="xs:int" minOccurs="0" />
+                  <xs:element name="InvoiceId" msprop:design-time-name="d2ecb463-292f-42d5-b32b-1173bdeaecdb" msprop:DbColumnName="InvoiceId" msprop:FriendlyName="InvoiceId" type="xs:int" minOccurs="0" />
+                  <xs:element name="TrackId" msprop:design-time-name="a51ebf91-1642-49b6-a3df-14db84e0aedb" msprop:DbColumnName="TrackId" msprop:FriendlyName="TrackId" type="xs:int" minOccurs="0" />
+                  <xs:element name="UnitPrice" msprop:design-time-name="d3546a15-8bf6-4a38-ab9c-17fa8d0a3d71" msprop:DbColumnName="UnitPrice" msprop:FriendlyName="UnitPrice" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="Quantity" msprop:design-time-name="8543d759-faa3-41d8-bae3-249afee67d6f" msprop:DbColumnName="Quantity" msprop:FriendlyName="Quantity" type="xs:int" minOccurs="0" />
+                  <xs:element name="TotalLineAmount" msprop:design-time-name="86a2b6cb-20af-4671-97fe-3bceaf579c27" msprop:DbColumnName="TotalLineAmount" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="Total_v2" msdata:ReadOnly="true" msprop:Description="" msprop:ComputedColumnExpression="Quantity * UnitPrice" msprop:IsLogical="True" msprop:design-time-name="825a7b90-6f8d-41e0-95d8-04f7774f8f41" msprop:DbColumnName="Total_v2" type="xs:decimal" minOccurs="0" />
                 </xs:sequence>
               </xs:complexType>
             </xs:element>
@@ -533,7 +534,7 @@
           <xs:selector xpath=".//dbo_Invoice" />
           <xs:field xpath="InvoiceId" />
         </xs:unique>
-        <xs:unique name="dbo_InvoiceLine_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+        <xs:unique name="dbo_InvoiceLine_Constraint1" msdata:ConstraintName="Constraint1" msprop:IsLogical="True" msdata:PrimaryKey="true">
           <xs:selector xpath=".//dbo_InvoiceLine" />
           <xs:field xpath="InvoiceLineId" />
         </xs:unique>
